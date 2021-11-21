@@ -8,4 +8,11 @@ export interface IService{
 }
 
 
+export interface ISkill{
+    name:string,
+    level:string,
+    Icon:IconType
+}
+
+
 
