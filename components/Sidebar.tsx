@@ -2,6 +2,7 @@ import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { GiTie } from "react-icons/gi";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const Sidebar = () => {
   const { theme, setTheme } = useTheme();
@@ -12,10 +13,20 @@ const Sidebar = () => {
 
   return (
     <div>
-      <img
+      {/* <img
         src="https://docs.kariyer.net/candidate/000/024/476/avatar/2447609520191214014806287.jpg?filesec=XdsV1VzBKiPzRwcAz5MUUrQs62paRHWQKZE0fMeNGD0srCpP82SOy0gReBGyFO40m6NqbhDXIr5RktpxSbOo4L%2FWhX4Tz6Uk!e!"
         alt="user avar"
         className="w-32 h-32 mx-auto rounded-full"
+      /> */}
+
+      <Image 
+        src="https://docs.kariyer.net/candidate/000/024/476/avatar/2447609520191214014806287.jpg?filesec=XdsV1VzBKiPzRwcAz5MUUrQs62paRHWQKZE0fMeNGD0srCpP82SOy0gReBGyFO40m6NqbhDXIr5RktpxSbOo4L%2FWhX4Tz6Uk!e!"
+        alt="user avar"
+        className="mx-auto rounded-full"
+        height="200px"
+        width="200px"
+        layout="intrinsic"
+        quality="100"
       />
 
       <h3 className="my-4 text-3xl tracking-wider font-kaushan">
