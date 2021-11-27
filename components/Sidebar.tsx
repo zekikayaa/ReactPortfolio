@@ -19,7 +19,7 @@ const Sidebar = () => {
         className="w-32 h-32 mx-auto rounded-full"
       /> */}
 
-      <Image 
+      <Image
         src="https://docs.kariyer.net/candidate/000/024/476/avatar/2447609520191214014806287.jpg?filesec=XdsV1VzBKiPzRwcAz5MUUrQs62paRHWQKZE0fMeNGD0srCpP82SOy0gReBGyFO40m6NqbhDXIr5RktpxSbOo4L%2FWhX4Tz6Uk!e!"
         alt="user avar"
         className="mx-auto rounded-full"
@@ -36,7 +36,13 @@ const Sidebar = () => {
       <p className="px-2 py-1 my-3 bg-gray-200 rounded-full dark:bg-dark-700 dark:bg-black-500 ">
         Backend Developer
       </p>
-      <a className="flex items-center justify-center px-2 py-1 bg-gray-200 rounded-full dark dark:bg-dark-700">
+      <a
+        className="flex items-center justify-center px-2 py-1 bg-gray-200 rounded-full dark dark:bg-dark-700"
+        //  href="/assets/Zeki Kaya Resume.pdf"
+        //  download="Zeki Kaya Resume.pdf"
+        href="/assets/blink.jpg"
+        download="blink.jpg"
+      >
         {" "}
         <GiTie className="w-6 h-6" /> Download Resume
       </a>
