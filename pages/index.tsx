@@ -3,12 +3,16 @@ import { IService } from "../type";
 import ServiceCard from "../components/ServiceCard";
 
 import { services } from "../data";
+import { motion } from "framer-motion";
+import { fadeInUp, routeAnimation, stagger } from "../animations";
 
 const index = (props: { services: IService[] }) => {
   // console.log("----------------------------Client----------------------------");
 
   return (
-    <div className="flex flex-col flex-grow px-6 pt-1">
+    <motion.div 
+    variants={routeAnimation} initial="initial" animate="animate" exit="exit"
+    className="flex flex-col flex-grow px-6 pt-1" >
       <h5 className="my-3 font-medium">
         I am currently pursuing B.Tech Degree(Final Year) in Computer Science
         Engineering from Academy of Technology. I have 3+ years of experience in
@@ -20,20 +24,28 @@ const index = (props: { services: IService[] }) => {
         style={{ marginLeft: "-1.5rem", marginRight: "-1.5rem" }}
       >
         <h6 className="my-3 text-xl font-bold tracking-wide">What I Offer</h6>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <motion.div
+          className="grid gap-6 lg:grid-cols-2"
+          variants={stagger}
+          initial="initial"
+          animate="animate"
+        >
           {/* {props.services.map((service) => (
             <div className="bg-gray-200 rounded-lg lg:col-span-1 ">
               <ServiceCard service={service} />
             </div>
           ))} */}
           {services.map((service) => (
-            <div className="bg-gray-200 rounded-lg lg:col-span-1 dark:bg-dark-200 ">
+            <motion.div
+              variants={fadeInUp}
+              className="col-span-2 p-2 bg-gray-200 rounded-lg lg:col-span-1 dark:bg-dark-200 "
+            >
               <ServiceCard service={service} />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -56,8 +68,6 @@ export default index;
 //     },
 //   };
 // };
-
-
 
 // This functon call once time at the project build beacuse this data static and never change so we dont need call every About page opening
 export const getStaticProps = async (contex: GetServerSideProps) => {
